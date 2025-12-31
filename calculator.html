@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="cal.css">
+</head>
+<body>
+	<div class="container">
+		<div class="calculator">
+			<input type="text" id="result" placeholder="0">
+			<button onclick="clrc()">AC</button>
+			<button onclick="del()">DEL</button>
+			<button class="operator" onclick="display('%')">%</button>
+				<button class="operator" onclick="display('/')">/</button>
+			<button onclick="display('7')">7</button>
+			<button onclick="display('8')">8</button>
+			<button onclick="display('9')">9</button>
+					<button class="operator" onclick="display('+')">+</button>
+			<button onclick="display('4')">4</button>
+			<button onclick="display('5')">5</button>
+			<button onclick="display('6')">6</button>
+			<button class="operator" onclick="display('*')">×</button>
+			
+			<button onclick="display('1')">1</button>
+			<button onclick="display('2')">2</button>
+			<button onclick="display('3')">3</button>
+				<button class="operator" onclick="display('-')">-</button>
+			<button onclick="display('.')">.</button>
+			<button onclick="display('0')">0</button>
+				
+			<button class="equal" onclick="calculate()">=</button>
+			
+			
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+	var result = document.getElementById('result');
+	function display(num) {
+		result.value += num;
+		// body...
+	}
+	function clrc(){
+		result.value = ""; 
+
+	}
+
+	function del(){
+		result.value  =result.value.slice(0,-1);
+	}
+	function calculate(){
+		try{
+			result.value = eval(result.value);
+		}
+		catch(err){
+			alert("Invald Input");
+		}
+	}
+	
+</script>
+</body>
+</html>
